@@ -1,26 +1,36 @@
 # Romain Cavalieri-Bélanger
-# Devinette, sept/2023
+# jeux_de_devinette, sept/2023
 
 import random
 
-nb_essaie = 0
-x = random.randint(0, 10)
-guess = 0
-trouver = False
 
-# boucle tant que nombre pas trouver
-while trouver:
-    nb_essaie += 1
-    guess = int(input("guess:"))
+#
+def jeux_devinette(a, z):
+    nb_essai = 0
+    jouer = True
 
-    if guess == x:
-        print("vous avez trouvé en ", nb_essaie, " essaies")
-        trouver = True
+    # boucle tant que l'utilisateur veut jouer
+    while jouer:
+        x = random.randint(a, z)
+        guess = int(input("guess:"))
 
-    elif guess > x:
-        print("-")
+        # boucle tant que nombre est pas trouver
+        while guess != x:
+            nb_essai += 1
 
-    else:
-        print("+")
+            if guess > x:
+                print("-")
+            else:
+                print("+")
+
+            guess = int(input("guess:"))
+
+        print('bravo! vous avez gagné')
+        print('vous avez réussi en ', nb_essai, ' essais')
+
+        if str(input('voulez vous rejouer, y or n')) == 'n':
+            jouer = False
 
 
+
+jeux_devinette(int(input('a: ')), int(input('z: ')))
