@@ -22,11 +22,10 @@ while jouer:
         guess = int(input("guess:"))
         nb_essai += 1
 
-        if guess == x:
-            print()
-        elif guess > x:
+
+        if guess > x:
             print("-")
-        else:
+        elif:
             print("+")
 
     print('bravo! vous avez gagné')
