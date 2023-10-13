@@ -25,7 +25,7 @@ while jouer:
 
         if guess > x:
             print("-")
-        elif:
+        elif guess < x:
             print("+")
 
     print('bravo! vous avez gagné')
